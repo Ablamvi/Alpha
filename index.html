@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galerie Avancée</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json"> <!-- Ajout du PWA -->
 </head>
 <body>
 
@@ -38,11 +39,12 @@
     </label>
   </section>
 
-  <!-- Recherche -->
+  <!-- Recherche et favoris -->
   <section id="search">
     <h2>Recherche Avancée</h2>
     <input type="text" id="search-input" placeholder="Rechercher un média">
     <button id="search-btn">Rechercher</button>
+    <button id="show-favorites">📌 Favoris</button>
   </section>
 
   <!-- Galerie Photos et Vidéos -->
@@ -77,5 +79,10 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>
