@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galerie Avancée</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <h1>MediaHub</h1>
@@ -16,7 +15,6 @@
       <li><a href="#photos">Photos</a></li>
       <li><a href="#videos">Vidéos</a></li>
       <li><a href="#upload">Ajouter</a></li>
-      <li><a href="#albums">Albums</a></li>
       <li><a href="#settings">Paramètres</a></li>
       <li><a href="#statistics">Statistiques</a></li>
     </ul>
@@ -35,11 +33,8 @@
       </select>
     </label>
     <label>
-      Mode d'affichage :
-      <select id="display-mode">
-        <option value="grid">Grille</option>
-        <option value="list">Liste</option>
-      </select>
+      Animations :
+      <input type="checkbox" id="animations-toggle" checked> Activer
     </label>
   </section>
 
@@ -50,15 +45,7 @@
     <button id="search-btn">Rechercher</button>
   </section>
 
-  <!-- Albums -->
-  <section id="albums">
-    <h2>Albums</h2>
-    <input type="text" id="album-name" placeholder="Nom de l'album">
-    <button id="create-album">Créer</button>
-    <div id="album-list"></div>
-  </section>
-
-  <!-- Galerie -->
+  <!-- Galerie Photos et Vidéos -->
   <section id="photos">
     <h2>Galerie de Photos</h2>
     <div class="gallery" id="photo-gallery"></div>
@@ -76,13 +63,13 @@
       <input type="file" id="file-input" accept="image/*, video/*">
       <button type="submit">Ajouter</button>
     </form>
-    <div id="preview"></div>
   </section>
 
   <!-- Statistiques -->
   <section id="statistics">
     <h2>Statistiques</h2>
-    <canvas id="stats-chart"></canvas>
+    <p id="most-viewed">Média le plus consulté : Aucune donnée</p>
+    <p id="most-downloaded">Média le plus téléchargé : Aucune donnée</p>
   </section>
 
   <footer>
